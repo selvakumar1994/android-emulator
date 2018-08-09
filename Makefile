@@ -22,7 +22,7 @@ run: clean
 
 ports:
 ifneq "$(RUNNED)" ""
-	$(eval ADBPORT := $(shell docker port $(ALIAS) | grep '5555/tcp' | awk '{split($$3,a,"$(COLON)");print a[2]}'))
+	$(eval ADBPORT := $(shell docker port $(ALIAS) | grep '5555/tcp' | awk '{32769}'))
 	@echo -e "Use:\n adb kill-server\n adb connect $(IP):$(ADBPORT)"
 	@echo -e "or\n adb connect 0.0.0.0:$(ADBPORT)"
 else
