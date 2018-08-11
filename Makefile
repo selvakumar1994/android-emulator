@@ -23,7 +23,7 @@ run: clean
 ports:
 ifneq "$(RUNNED)" ""
 	$(eval ADBPORT := $(shell docker port $(ALIAS) | grep '5555/tcp' | awk '{split($$3,a,"$(COLON)");print a[2]}'))
-	@echo -e "adb connect 0.0.0.0:$(ADBPORT)"
+	@echo -e "adb connect $(IP):$(ADBPORT)"
 else
 	@echo "Run container"
 endif
